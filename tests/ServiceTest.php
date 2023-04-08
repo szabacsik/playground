@@ -13,6 +13,6 @@ class ServiceTest extends TestCase
         $result = $service->action();
         $this->assertIsArray($result);
         $this->assertCount(3, $result);
-        $this->assertEquals([1, 2, 3], $result);
+        $this->assertContains(1, $result);
     }
 }

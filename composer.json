@@ -15,7 +15,13 @@
   "require": {
   },
   "require-dev": {
-    "phpunit/phpunit": "*"
+    "phpunit/phpunit": "*",
+    "infection/infection": "*"
+  },
+  "config": {
+    "allow-plugins": {
+      "infection/extension-installer": true
+    }
   },
   "autoload": {
     "psr-4": {
@@ -35,6 +41,10 @@
     "test:coverage": [
       "@putenv XDEBUG_MODE=coverage",
       "phpunit --configuration phpunit.xml --color=always --testdox --do-not-cache-result --log-junit reports/results.xml --coverage-html reports/coverage --coverage-clover reports/coverage.xml --testdox-html reports/result.html"
+    ],
+    "test:mutation": [
+      "@putenv XDEBUG_MODE=coverage",
+      "infection --threads=5 --only-covered --logger-html=reports/mutation/index.html"
     ]
   }
 }
