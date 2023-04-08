@@ -19,7 +19,7 @@ class ServiceTest extends TestCase
     public function testProcess()
     {
         $service = new Service();
-        $result = $service->action();
+        $result = $service->process();
         $this->assertNotEmpty($result);
     }
 
