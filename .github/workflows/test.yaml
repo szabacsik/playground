@@ -1,0 +1,31 @@
+name: "Tests"
+
+jobs:
+  phpunit:
+    name: "PHPUnit"
+
+    strategy:
+      matrix:
+        php-version:
+          - "7.4"
+          - "8.0"
+          - "8.1"
+          - "8.2"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v3"
+
+      - name: "Install PHP with extensions"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "xdebug"
+          php-version: "${{ matrix.php-version }}"
+
+      - name: "Download dependencies"
+        run: "composer update --ansi --no-interaction --no-progress --optimize-autoloader"
+
+      - name: "Run tests"
+        run: "composer run-script test:coverage"
