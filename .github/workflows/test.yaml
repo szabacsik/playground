@@ -37,6 +37,8 @@ jobs:
         run: "composer run-script test:coverage"
 
       - name: "Run mutation tests"
+        env:
+          STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
         run: "composer run-script test:mutation"
 
       - name: Upload coverage reports to Codecov
