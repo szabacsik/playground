@@ -16,6 +16,6 @@ class Service
 
     private function run(): void
     {
-        sleep(1);
+        sleep(2);
     }
 }
