@@ -33,8 +33,11 @@ jobs:
       - name: "Download dependencies"
         run: "composer update --ansi --no-interaction --no-progress --optimize-autoloader"
 
-      - name: "Run tests"
+      - name: "Run unit tests"
         run: "composer run-script test:coverage"
+
+      - name: "Run mutation tests"
+        run: "composer run-script test:mutation"
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
