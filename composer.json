@@ -44,7 +44,7 @@
     ],
     "test:mutation": [
       "@putenv XDEBUG_MODE=coverage",
-      "infection --threads=5 --only-covered --logger-html=reports/mutation/index.html"
+      "infection --threads=5 --logger-html=reports/mutation/index.html"
     ]
   }
 }
