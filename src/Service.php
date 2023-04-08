@@ -21,6 +21,9 @@ class Service
 
     public function process(): array
     {
-        return ['lorem', 'ipsum', 'dolor'];
+        $lorem = strtoupper('lorem');
+        $ipsum = 'ipsum';
+        $dolor = [1, 2, 3];
+        return [0, 1, $lorem, $ipsum, $dolor, 2, 3];
     }
 }
