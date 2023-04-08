@@ -15,4 +15,12 @@ class ServiceTest extends TestCase
         $this->assertCount(3, $result);
         $this->assertContains(1, $result);
     }
+
+    public function testProcess()
+    {
+        $service = new Service();
+        $result = $service->action();
+        $this->assertNotEmpty($result);
+    }
+
 }

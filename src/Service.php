@@ -18,4 +18,9 @@ class Service
     {
         sleep(2);
     }
+
+    public function process(): array
+    {
+        return ['lorem', 'ipsum', 'dolor'];
+    }
 }
