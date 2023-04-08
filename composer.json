@@ -34,7 +34,7 @@
     ],
     "test:coverage": [
       "@putenv XDEBUG_MODE=coverage",
-      "phpunit --configuration phpunit.xml --color=always --testdox --coverage-html reports/coverage --testdox-html reports/result.html"
+      "phpunit --configuration phpunit.xml --color=always --testdox --do-not-cache-result --log-junit reports/results.xml --coverage-html reports/coverage --coverage-clover reports/coverage.xml --testdox-html reports/result.html"
     ]
   }
 }
