@@ -21,6 +21,7 @@ class ServiceTest extends TestCase
         $service = new Service();
         $result = $service->process();
         $this->assertNotEmpty($result);
+        $this->assertContains('LOREM', $result);
     }
 
 }
